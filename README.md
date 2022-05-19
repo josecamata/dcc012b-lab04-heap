@@ -30,7 +30,9 @@ Existem diversas maneiras de se implementar um heap. Em geral, um heap deve perm
 
 Árvores esquerdistas são árvores binárias nas quais vale a propriedade esquerdista :
  - Para todo no **x** da árvore vale:
-  $dist(Esq(x)) >\ge dist(Dir(x))$
+ - 
+         $dist(Esq(x)) = dist(Dir(x))$
+
 onde Esq(x) e Dir(x) são respectivamente, os filhos direito e esquerdo de **x**.
 
 O *dist* de um nó *x* é o comprimento do caminho de *x* até o nó não nulo mais à direita.
@@ -44,8 +46,6 @@ Uma estrutura básica para a implementação da heap esquerdistas já foi fornec
 
  Nessa atividade, vocês devem implementar as operações **merge**, **insert**, **FindMax** e **RemoveMax**.
 
-
-
 ## Compilação e execução
 
 ```
@@ -57,35 +57,31 @@ ctest
 ```
 O comando ctest irá executar o conjunto de testes unitaŕios para avaliar sua implementação.
 
-Os testes [1](tests/test1.cc)  ao [2]()  criam heaps de inteiros para validar as funções implementadas. 
-
+Os testes [1](tests/test1.cc)  ao [4](tests/test4.cc) criam heaps de inteiros para validar as funções implementadas. 
+Os testes 5 e 6 já manipulam os dados de estudantes.
 
 Veja no arquivo [CMakeLists.txt](CMakeLists.txt) o que os testes estão fazendo.
 
 ```
-Test project /home/camata/git/dcc012/dcc012b-lab03-sorting/build
-      Start  1: Setup
- 1/10 Test  #1: Setup ............................   Passed    0.01 sec
-      Start  2: TestImportacao1000
- 2/10 Test  #2: TestImportacao1000 ...............   Passed    0.13 sec
-      Start  3: TestMergeSort1000
- 3/10 Test  #3: TestMergeSort1000 ................   Passed    0.01 sec
-      Start  4: MergeSortCompare
- 4/10 Test  #4: MergeSortCompare .................   Passed    0.02 sec
-      Start  5: TestQuickSort1000
- 5/10 Test  #5: TestQuickSort1000 ................   Passed    0.01 sec
-      Start  6: QuickSortCompare
- 6/10 Test  #6: QuickSortCompare .................   Passed    0.02 sec
-      Start  7: Importe2000
- 7/10 Test  #7: Importe2000 ......................   Passed    0.29 sec
-      Start  8: OrdenaCursoENome
- 8/10 Test  #8: OrdenaCursoENome .................   Passed    0.02 sec
-      Start  9: OrdenaCursoENomeCompare
- 9/10 Test  #9: OrdenaCursoENomeCompare ..........   Passed    0.01 sec
-      Start 10: Compara
-10/10 Test #10: Compara ..........................   Passed    0.98 sec
+Test project /home/camata/git/dcc012/dcc012b-lab04-heap/build
+    Start 1: Setup
+1/7 Test #1: Setup ............................   Passed    0.02 sec
+    Start 2: TestInsert
+2/7 Test #2: TestInsert .......................   Passed    0.00 sec
+    Start 3: TestFindMax
+3/7 Test #3: TestFindMax ......................   Passed    0.00 sec
+    Start 4: TestRemoveMax
+4/7 Test #4: TestRemoveMax ....................   Passed    0.00 sec
+    Start 5: TestMerge
+5/7 Test #5: TestMerge ........................   Passed    0.00 sec
+    Start 6: TestFindRemoveMaxSiga
+6/7 Test #6: TestFindRemoveMaxSiga ............   Passed    0.12 sec
+    Start 7: TestHeapMergeSiga
+7/7 Test #7: TestHeapMergeSiga ................   Passed    0.08 sec
 
-100% tests passed, 0 tests failed out of 10
+100% tests passed, 0 tests failed out of 7
+
+Total Test time (real) =   0.24 sec
 ```
 
 
@@ -96,8 +92,5 @@ Passar em todos testes é importante pois indica que você está no caminho cert
  - código desorganizado e/ou sem documentação/comentários
  - detectação de vazamentos de memória
  - Implementação ineficiente
-
-## Procure saber mais...
-Tente saber com os testes unitários foram implementados no CMakeList. 
 
 
