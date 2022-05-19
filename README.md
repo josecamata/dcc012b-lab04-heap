@@ -39,11 +39,14 @@ O *dist* de um nó *x* é o comprimento do caminho de *x* até o nó não nulo m
  - Vamos considerar que o dist de um nó nulo é -1;
 
 O pseudocodigo para cálculo do dist é apresentado a seguir:
-```
-dist(node)
- if(node == null)
-   return -1
- return 1 + min(dist(node->left),dist(node->right))
+
+```C
+int dist(LeftistNode* node)
+{
+  if(node == null)
+    return -1;
+  return 1 + min(dist(node->left),dist(node->right));
+ }
 ```
 
 ## O que deve ser feito? 
