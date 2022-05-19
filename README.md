@@ -30,8 +30,9 @@ Existem diversas maneiras de se implementar um heap. Em geral, um heap deve perm
 
 Árvores esquerdistas são árvores binárias nas quais vale a propriedade esquerdista :
  - Para todo no **x** da árvore vale:
- - 
-         $dist(Esq(x)) = dist(Dir(x))$
+ ```math
+ dist(Esq(x)) = dist(Dir(x))
+ ```
 
 onde Esq(x) e Dir(x) são respectivamente, os filhos direito e esquerdo de **x**.
 
