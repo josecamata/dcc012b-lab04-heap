@@ -20,24 +20,31 @@ Heaps são utilizados, por exemplo, para:
  - Compressão de arquivos (Algoritmo de Huffman por exemplo).
 
 Existem diversas maneiras de se implementar um heap. Em geral, um heap deve permitir as seguintes operações (se possível eficientemente):
- - MakeHeap:  Cria e devolve um novo heap vazio
- - Insert: Insere um elemento no heap e devolve o novo heap
- - FindMax: Devolve o elemento maximo do heap
- - RemoveMax:  Remove o elemento máximo do heap
+ - *MakeHeap*:  Cria e devolve um novo heap vazio
+ - *Insert*: Insere um elemento no heap e devolve o novo heap
+ - *FindMax*: Seleciona o elemento maximo do heap
+ - *RemoveMax*:  Remove o elemento máximo do heap
 
  Estamos interessados em **heaps intercaláveis** que além das operações anteriores também oferecem:
-  - Merge(H1,H2): cria e devolve um novo heap que contém todos os elementos de H1 e H2
+  - *Merge(H1,H2)*: cria e devolve um novo heap que contém todos os elementos de H1 e H2
 
 Árvores esquerdistas são árvores binárias nas quais vale a propriedade esquerdista :
- - Para todo no **x** da árvore vale:
+ - Para todo no *x* da árvore vale:
  ```math
  dist(Esq(x)) >= dist(Dir(x))
  ```
-
-onde Esq(x) e Dir(x) são respectivamente, os filhos direito e esquerdo de **x**.
+onde Esq(*x*) e Dir(*x*) são respectivamente, os filhos direito e esquerdo de *x*.
 
 O *dist* de um nó *x* é o comprimento do caminho de *x* até o nó não nulo mais à direita.
- - Considera-se que o dist de um nó nulo é -1;
+ - Vamos considerar que o dist de um nó nulo é -1;
+
+O pseudocodigo para cálculo do dist é apresentado a seguir:
+```
+dist(node)
+ if(node == null)
+   return -1
+ return 1 + min(dist(node->left),dist(node->right))
+```
 
 ## O que deve ser feito? 
 
