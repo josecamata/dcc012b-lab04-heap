@@ -19,7 +19,9 @@ Heaps são utilizados, por exemplo, para:
  - Cálculo de árvores geradoras de custo mínimo (Algoritmos de Kruskal e Prim);
  - Compressão de arquivos (Algoritmo de Huffman por exemplo).
 
-Existem diversas maneiras de se implementar um heap. Em geral, um heap deve permitir as seguintes operações (se possível eficientemente):
+Existem diversas maneiras de se implementar um heap, pode-se usar um arranjo linear como uma arvore quase completa ou usando árvores com ponteiros como as árvores esquerdistas e binomiais.
+
+Em geral, um heap deve permitir as seguintes operações (se possível eficientemente):
  - *MakeHeap*:  Cria e devolve um novo heap vazio
  - *Insert*: Insere um elemento no heap e devolve o novo heap
  - *FindMax*: Seleciona o elemento maximo do heap
@@ -52,8 +54,8 @@ int dist(LeftistNode* node)
 ## O que deve ser feito? 
 
 Uma estrutura básica para a implementação da heap esquerdistas já foi fornecida. 
- - [leftist_heap_node.h](siga/include/leftist_heap_node.h) implementa a estrutura de um nó de uma árvore esquerdista.
- - [leftist_heap.h](siga/include/leftist_heap.h) tem uma implementação incompleta de heap esquerdistas.
+ - [leftist_heap_node.h](code/include/leftist_heap_node.h) implementa a estrutura de um nó de uma árvore esquerdista.
+ - [leftist_heap.h](code/include/leftist_heap.h) tem uma implementação incompleta de heap esquerdistas.
 
  Nessa atividade, vocês devem implementar as operações **merge**, **insert**, **FindMax** e **RemoveMax**.
 
