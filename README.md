@@ -69,28 +69,24 @@ ctest
 O comando ctest irá executar o conjunto de testes unitaŕios para avaliar sua implementação.
 
 Os testes [1](tests/test1.cc)  ao [4](tests/test4.cc) criam heaps de inteiros para validar as funções implementadas. 
-Os testes 5 e 6 já manipulam os dados de estudantes.
+
 
 Veja no arquivo [CMakeLists.txt](CMakeLists.txt) o que os testes estão fazendo.
 
 ```
 Test project /home/camata/git/dcc012/dcc012b-lab04-heap/build
     Start 1: Setup
-1/7 Test #1: Setup ............................   Passed    0.02 sec
+1/4 Test #1: Setup ............................   Passed    0.02 sec
     Start 2: TestInsert
-2/7 Test #2: TestInsert .......................   Passed    0.00 sec
+2/4 Test #2: TestInsert .......................   Passed    0.00 sec
     Start 3: TestFindMax
-3/7 Test #3: TestFindMax ......................   Passed    0.00 sec
+3/4 Test #3: TestFindMax ......................   Passed    0.00 sec
     Start 4: TestRemoveMax
-4/7 Test #4: TestRemoveMax ....................   Passed    0.00 sec
+4/4 Test #4: TestRemoveMax ....................   Passed    0.00 sec
     Start 5: TestMerge
-5/7 Test #5: TestMerge ........................   Passed    0.00 sec
-    Start 6: TestFindRemoveMaxSiga
-6/7 Test #6: TestFindRemoveMaxSiga ............   Passed    0.12 sec
-    Start 7: TestHeapMergeSiga
-7/7 Test #7: TestHeapMergeSiga ................   Passed    0.08 sec
 
-100% tests passed, 0 tests failed out of 7
+
+100% tests passed, 0 tests failed out of 4
 
 Total Test time (real) =   0.24 sec
 ```
