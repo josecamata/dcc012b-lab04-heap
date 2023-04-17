@@ -57,7 +57,7 @@ Uma estrutura básica para a implementação da heap esquerdistas já foi fornec
  - [leftist_heap_node.h](code/include/leftist_heap_node.h) implementa a estrutura de um nó de uma árvore esquerdista.
  - [leftist_heap.h](code/include/leftist_heap.h) tem uma implementação incompleta de heap esquerdistas.
 
- Nessa atividade, vocês devem implementar as operações **merge**, **insert**, **FindMax** e **RemoveMax**.
+ Nessa atividade, vocês devem implementar as operações **Merge**, **Insert**, **FindMax** e **RemoveMax**.
 
 ## Compilação e execução
 
