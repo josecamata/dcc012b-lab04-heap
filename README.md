@@ -36,7 +36,7 @@ Existem diversas maneiras de se implementar um heap. Em geral, um heap deve perm
 onde Esq(*x*) e Dir(*x*) são respectivamente, os filhos direito e esquerdo de *x*.
 
 O *dist* de um nó *x* é o comprimento do caminho de *x* até o nó não nulo mais à direita.
- - Vamos considerar que o dist de um nó nulo é -1;
+ - Vamos considerar que o dist de um nó nulo é 0;
 
 O pseudocodigo para cálculo do dist é apresentado a seguir:
 
