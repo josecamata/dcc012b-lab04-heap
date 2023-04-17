@@ -43,8 +43,8 @@ O pseudocodigo para cálculo do dist é apresentado a seguir:
 ```C
 int dist(LeftistNode* node)
 {
-  if(node == null)
-    return -1;
+  if(node == nullptr)
+    return 0;
   return 1 + min(dist(node->left),dist(node->right));
  }
 ```
