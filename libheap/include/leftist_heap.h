@@ -82,23 +82,6 @@ LeftistHeapNode<T>* LeftistHeap<T>::Auxiliary_Merge(LeftistHeapNode<T>* A, Lefti
     // 4. Se A->left->dist < A->right->dist, troque A->left com A->right
     // 5. Se A->right é nulo, A->dist = 1, senão A->dist = A->right->dist + 1
     // 6. Retorne A
-    if(A == nullptr)
-        return B;
-    if(B == nullptr)
-        return A;
-    if(A->data < B->data)
-        std::swap(A, B);
-    
-    A->right = Auxiliary_Merge(A->right, B);
-    int distL = A->left == nullptr  ? 0 : A->left->dist;
-    int distR = A->right == nullptr ? 0 : A->right->dist;
-    if(distL < distR)
-        std::swap(A->left, A->right);
-    if(A->right == nullptr)
-        A->dist = 1;
-    else
-        A->dist = A->right->dist + 1;
-    return A;
 
 }
 
@@ -143,9 +126,6 @@ void LeftistHeap<T>::Insert(T key)
     //  1. Criar uma heap com um nó com a chave key
     //  2. Realizar o merge da heap criada com a heap atual
 
-    LeftistHeap<T> temp(key);
-    this->Merge(temp);
-
 }
 
 template<typename T>
@@ -158,11 +138,6 @@ T LeftistHeap<T>::RemoveMax()
     //  3. Liberar a memória do nó raiz
     //  4. Retornar a chave salva no passo 1
 
-    T key = root->data;
-    LeftistHeapNode<T>* temp = root;
-    root = Auxiliary_Merge(root->left, root->right);
-    delete temp;
-    return key;
 }
 
 template<typename T>
@@ -171,7 +146,7 @@ T& LeftistHeap<T>::FindMax()
    //TODO: IMPLEMENTAR SELEÇÃO
    // Etapas:
    //  1. Retornar a chave do nó raiz
-    return root->data;
+
 }
 
 template<typename T>
@@ -181,10 +156,7 @@ void LeftistHeap<T>::Merge(LeftistHeap<T>& other)
     // Etapas:
     //  1. Realizar o merge das duas heaps
     //  2. Zerar a heap other
-    if(this == &other)
-        return;
-    root = this->Auxiliary_Merge(root, other.root);
-    other.root = nullptr;
+
 }
 
 template<typename T>
