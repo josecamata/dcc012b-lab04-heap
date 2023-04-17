@@ -71,19 +71,7 @@ int LeftistHeap<T>::ComputeDist(LeftistHeapNode<T>* node)
         return 1 + std::min(ComputeDist(node->getLeftChild()), ComputeDist(node->getRightChild()));
 }
 
-template<typename T>
-LeftistHeapNode<T>* LeftistHeap<T>::Auxiliary_Merge(LeftistHeapNode<T>* A, LeftistHeapNode<T>* B)
-{
-    //TODO: IMPLEMENTAR MERGE
-    // Etapas:
-    // 1. Se A ou B é nulo, retorne o outro
-    // 2. Se A->data < B->data, troque A com B
-    // 3. A->right = Merge(A->right, B)
-    // 4. Se A->left->dist < A->right->dist, troque A->left com A->right
-    // 5. Se A->right é nulo, A->dist = 1, senão A->dist = A->right->dist + 1
-    // 6. Retorne A
 
-}
 
 template <typename T>
 bool LeftistHeap<T>::CheckLeftistHeap(LeftistHeapNode<T>* node)
@@ -115,48 +103,6 @@ LeftistHeap<T>::LeftistHeap() : root(nullptr) {
 
 template<typename T>
 LeftistHeap<T>::LeftistHeap(T key) : root(new LeftistHeapNode<T>(key)) {
-}
-
-
-template<typename T>
-void LeftistHeap<T>::Insert(T key) 
-{
-    //TODO: IMPLEMENTAR INSERÇÃO
-    // Etapas:
-    //  1. Criar uma heap com um nó com a chave key
-    //  2. Realizar o merge da heap criada com a heap atual
-
-}
-
-template<typename T>
-T LeftistHeap<T>::RemoveMax()
-{
-    //TODO: IMPLEMENTAR REMOÇÃO
-    // Etapas:
-    //  1. Salvar a chave do nó raiz
-    //  2. Realizar o merge dos filhos da raiz
-    //  3. Liberar a memória do nó raiz
-    //  4. Retornar a chave salva no passo 1
-
-}
-
-template<typename T>
-T& LeftistHeap<T>::FindMax()
-{
-   //TODO: IMPLEMENTAR SELEÇÃO
-   // Etapas:
-   //  1. Retornar a chave do nó raiz
-
-}
-
-template<typename T>
-void LeftistHeap<T>::Merge(LeftistHeap<T>& other)
-{
-    // Implementação do merge
-    // Etapas:
-    //  1. Realizar o merge das duas heaps
-    //  2. Zerar a heap other
-
 }
 
 template<typename T>
@@ -210,5 +156,62 @@ bool LeftistHeap<T>::isLeftistHeap()
 {
     return CheckLeftistHeap(root);
 }
+
+
+template<typename T>
+void LeftistHeap<T>::Insert(T key) 
+{
+    //TODO: IMPLEMENTAR INSERÇÃO
+    // Etapas:
+    //  1. Criar uma heap com um nó com a chave key
+    //  2. Realizar o merge da heap criada com a heap atual
+
+}
+
+template<typename T>
+T LeftistHeap<T>::RemoveMax()
+{
+    //TODO: IMPLEMENTAR REMOÇÃO
+    // Etapas:
+    //  1. Salvar a chave do nó raiz
+    //  2. Realizar o merge dos filhos da raiz
+    //  3. Liberar a memória do nó raiz
+    //  4. Retornar a chave salva no passo 1
+
+}
+
+template<typename T>
+T& LeftistHeap<T>::FindMax()
+{
+   //TODO: IMPLEMENTAR SELEÇÃO
+   // Etapas:
+   //  1. Retornar a chave do nó raiz
+
+}
+
+template<typename T>
+LeftistHeapNode<T>* LeftistHeap<T>::Auxiliary_Merge(LeftistHeapNode<T>* A, LeftistHeapNode<T>* B)
+{
+    //TODO: IMPLEMENTAR MERGE
+    // Etapas:
+    // 1. Se A ou B é nulo, retorne o outro
+    // 2. Se A->data < B->data, troque A com B
+    // 3. A->right = Merge(A->right, B)
+    // 4. Se A->left->dist < A->right->dist, troque A->left com A->right
+    // 5. Se A->right é nulo, A->dist = 1, senão A->dist = A->right->dist + 1
+    // 6. Retorne A
+
+}
+
+template<typename T>
+void LeftistHeap<T>::Merge(LeftistHeap<T>& other)
+{
+    // Implementação do merge
+    // Etapas:
+    //  1. Realizar o merge das duas heaps
+    //  2. Zerar a heap other
+
+}
+
 
 #endif
