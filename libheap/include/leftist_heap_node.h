@@ -27,7 +27,7 @@ class LeftistHeapNode {
     LeftistHeapNode(const T&);
 
     // construtor de copia
-    LeftistHeapNode(const T&, LeftistHeapNode<T>*, LeftistHeapNode<T>*);
+    LeftistHeapNode(LeftistHeapNode<T>*);
 
     // retorna filho esquerdo
     LeftistHeapNode<T>* getLeftChild();
@@ -61,11 +61,15 @@ class LeftistHeapNode {
 };
 
 template <typename T>
-LeftistHeapNode<T>::LeftistHeapNode(const T& d) : data(d), left(nullptr), right(nullptr), dist(0) {
+LeftistHeapNode<T>::LeftistHeapNode(const T& d) : data(d), left(nullptr), right(nullptr), dist(1) {
 }
 
 template <typename T>
-LeftistHeapNode<T>::LeftistHeapNode(const T& d, LeftistHeapNode<T>* l, LeftistHeapNode<T>* r) : data(d), left(l), right(r), dist(0) {
+LeftistHeapNode<T>::LeftistHeapNode(LeftistHeapNode<T>* node){
+    this->data  = node->data;
+    this->left  = node->left;
+    this->right = node->right;
+    this->dist  = node->dist;
 }
 
 template <typename T>
